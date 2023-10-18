@@ -40,7 +40,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func determineLocation() {
         if location != nil {
-            let coordinate = CLLocationCoordinate2D(latitude: location?.latitude, longitude: location.)
+//            let coordinate = CLLocationCoordinate2D(latitude: location?.latitude, longitude: location.)
         }
     }
     
@@ -61,14 +61,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             let coordinates = mapView.convert(point, toCoordinateFrom: self.mapView)
             addAnnotation(latitude: coordinates.latitude, longitude: coordinates.longitude, 
                           title: locationName.text, subtitle: locationDescription.text)
-            
-            let location = Locations(context: CoreDataHelper.getManagedObjectContext()!)
-            location.id = UUID()
-            location.title = locationName.text
-            location.subtitle = locationDescription.text
-            location.latitude = coordinates.latitude
-            location.longitude = coordinates.longitude
-            locationCoreData.add(item: location)
+            let popup = CreatePinPopUpViewController(coordinates: coordinates)
+            self.present(popup, animated: true)
         }
     }
     

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		8953B0352AC46EF400BE8F61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8953B0342AC46EF400BE8F61 /* Main.storyboard */; };
 		8953B0372AC4765A00BE8F61 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8953B0362AC4765A00BE8F61 /* CoreDataHelper.swift */; };
+		898BA48E2ADFF7CA00D9A040 /* CreatePinPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898BA48C2ADFF7CA00D9A040 /* CreatePinPopUpViewController.swift */; };
+		898BA48F2ADFF7CA00D9A040 /* CreatePinPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 898BA48D2ADFF7CA00D9A040 /* CreatePinPopUpViewController.xib */; };
+		898BA4952AE0039F00D9A040 /* CustomBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898BA4912AE0039F00D9A040 /* CustomBlurView.swift */; };
+		898BA4962AE0039F00D9A040 /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898BA4922AE0039F00D9A040 /* CustomUIView.swift */; };
+		898BA4972AE0039F00D9A040 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898BA4932AE0039F00D9A040 /* Font.swift */; };
+		898BA4982AE0039F00D9A040 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898BA4942AE0039F00D9A040 /* CustomImageView.swift */; };
 		89CBBD1F2AC01604001992D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CBBD1E2AC01604001992D2 /* AppDelegate.swift */; };
 		89CBBD212AC01604001992D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CBBD202AC01604001992D2 /* SceneDelegate.swift */; };
 		89CBBD232AC01604001992D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CBBD222AC01604001992D2 /* ViewController.swift */; };
@@ -42,6 +48,12 @@
 /* Begin PBXFileReference section */
 		8953B0342AC46EF400BE8F61 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8953B0362AC4765A00BE8F61 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		898BA48C2ADFF7CA00D9A040 /* CreatePinPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePinPopUpViewController.swift; sourceTree = "<group>"; };
+		898BA48D2ADFF7CA00D9A040 /* CreatePinPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePinPopUpViewController.xib; sourceTree = "<group>"; };
+		898BA4912AE0039F00D9A040 /* CustomBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBlurView.swift; sourceTree = "<group>"; };
+		898BA4922AE0039F00D9A040 /* CustomUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
+		898BA4932AE0039F00D9A040 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		898BA4942AE0039F00D9A040 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		89CBBD1B2AC01604001992D2 /* Map Kit Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Map Kit Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CBBD1E2AC01604001992D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89CBBD202AC01604001992D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +96,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		898BA48B2ADFF7A200D9A040 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				898BA48C2ADFF7CA00D9A040 /* CreatePinPopUpViewController.swift */,
+				898BA48D2ADFF7CA00D9A040 /* CreatePinPopUpViewController.xib */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
+		898BA4902AE0039F00D9A040 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				898BA4912AE0039F00D9A040 /* CustomBlurView.swift */,
+				898BA4922AE0039F00D9A040 /* CustomUIView.swift */,
+				898BA4932AE0039F00D9A040 /* Font.swift */,
+				898BA4942AE0039F00D9A040 /* CustomImageView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		89CBBD122AC01604001992D2 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +139,8 @@
 		89CBBD1D2AC01604001992D2 /* Map Kit Example */ = {
 			isa = PBXGroup;
 			children = (
+				898BA4902AE0039F00D9A040 /* Helpers */,
+				898BA48B2ADFF7A200D9A040 /* PopUp */,
 				89E5B2C02AC4AA7E007C1C72 /* View Controllers */,
 				89CBBD1E2AC01604001992D2 /* AppDelegate.swift */,
 				89CBBD202AC01604001992D2 /* SceneDelegate.swift */,
@@ -253,6 +287,7 @@
 			files = (
 				8953B0352AC46EF400BE8F61 /* Main.storyboard in Resources */,
 				89CBBD2E2AC01606001992D2 /* LaunchScreen.storyboard in Resources */,
+				898BA48F2ADFF7CA00D9A040 /* CreatePinPopUpViewController.xib in Resources */,
 				89CBBD2B2AC01606001992D2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,12 +314,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8953B0372AC4765A00BE8F61 /* CoreDataHelper.swift in Sources */,
+				898BA4982AE0039F00D9A040 /* CustomImageView.swift in Sources */,
+				898BA4972AE0039F00D9A040 /* Font.swift in Sources */,
+				898BA4962AE0039F00D9A040 /* CustomUIView.swift in Sources */,
 				89CBBD292AC01604001992D2 /* Map_Kit_Example.xcdatamodeld in Sources */,
 				89CBBD232AC01604001992D2 /* ViewController.swift in Sources */,
 				89E5B2C22AC4AAB0007C1C72 /* MapsListViewController.swift in Sources */,
 				89E5B2C42AC4AD96007C1C72 /* Constants.swift in Sources */,
 				89CBBD1F2AC01604001992D2 /* AppDelegate.swift in Sources */,
+				898BA4952AE0039F00D9A040 /* CustomBlurView.swift in Sources */,
 				89CBBD212AC01604001992D2 /* SceneDelegate.swift in Sources */,
+				898BA48E2ADFF7CA00D9A040 /* CreatePinPopUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

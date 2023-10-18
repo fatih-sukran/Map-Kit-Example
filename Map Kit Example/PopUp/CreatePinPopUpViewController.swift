@@ -6,10 +6,20 @@
 //
 
 import UIKit
+import MapKit
 
 class CreatePinPopUpViewController: UIViewController {
 
-    init() {
+    @IBOutlet weak var locationName: UITextField!
+    @IBOutlet weak var locationDescription: UITextField!
+    @IBOutlet weak var backView: UIView!
+    
+    
+    private let locationCoreData = CoreDataHelper<Locations>(entitiyName: "Locations")
+    private let coordinates: CLLocationCoordinate2D
+    
+    init(coordinates: CLLocationCoordinate2D) {
+        self.coordinates = coordinates
         super.init(nibName: "CreatePinPopUpViewController", bundle: nil)
         self.modalPresentationStyle = .overFullScreen
     }
@@ -20,16 +30,26 @@ class CreatePinPopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configView()
+        self.view.backgroundColor = .clear
+        
+        let clickBack = UITapGestureRecognizer(target: self, action: #selector(dismissPopUp))
+        backView.addGestureRecognizer(clickBack)
     }
     
-    private func configView() {
-        self.view.backgroundColor = .clear
-//        self.backView.backgroundColor = .black.withAlphaComponent(0.6)
-//        self.backView.alpha = 0
-//        self.contentView.alpha = 0
-//        self.contentView.layer.cornerRadius = 10
+    @objc func dismissPopUp() {
+        self.dismiss(animated: false)
+        self.removeFromParent()
     }
-
+        
+    @IBAction func saveLocation(_ sender: UIButton) {
+        let location = Locations(context: CoreDataHelper.getManagedObjectContext()!)
+        location.id = UUID()
+        location.title = locationName.text
+        location.subtitle = locationDescription.text
+        location.latitude = coordinates.latitude
+        location.longitude = coordinates.longitude
+        locationCoreData.add(item: location)
+        
+        dismissPopUp()
+    }
 }

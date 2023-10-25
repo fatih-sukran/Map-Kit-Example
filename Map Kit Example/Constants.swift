@@ -10,4 +10,5 @@ import Foundation
 class Constants {
     static let mapPageSegue = "toMapPage"
     static let locationEntityName = "Locations"
+    static let locationAdded = "LocationAdded"
 }

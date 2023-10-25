@@ -56,5 +56,12 @@ class MapsListViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(Constants.locationAdded), object: nil)
+    }
+    
+    @objc func getData() {
+        locations = coreDataHelper.getAll()
+        tableView.reloadData()
+    }
 }

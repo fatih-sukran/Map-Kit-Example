@@ -37,9 +37,12 @@ class CreatePinPopUpViewController: UIViewController {
     }
     
     @objc func dismissPopUp() {
-        self.dismiss(animated: false)
-        self.removeFromParent()
+        self.dismiss(animated: true, completion: {
+            self.navigationController?.popToViewController(MapsListViewController(), animated: true)
+//            self.navigationController?.pushViewController(MapsListViewController(), animated: true)
+        })
     }
+
         
     @IBAction func saveLocation(_ sender: UIButton) {
         let location = Locations(context: CoreDataHelper.getManagedObjectContext()!)
@@ -50,6 +53,8 @@ class CreatePinPopUpViewController: UIViewController {
         location.longitude = coordinates.longitude
         locationCoreData.add(item: location)
         
+        NotificationCenter.default.post(name: NSNotification.Name(Constants.locationAdded), object: nil)
         dismissPopUp()
+
     }
 }
